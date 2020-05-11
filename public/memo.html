@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 메모</title>
+    <style>
+        div {
+            display: inline;
+        }
+
+        subject {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="subject">나의 메모</div>
+    <div>
+        <form action="/process/memo" method="post">
+            <label for="userName">작성자</label>
+            <input type="text" name="userName" id="userName">
+            <label for="writeDate">작성일시</label>
+            <input type="text" name="writeDate" id="writeDate">
+            <textarea name="content" id="content" cols="30" rows="10" placeholder="내용"></textarea>
+            <input type="submit" value="보내기">
+        </form>
+    </div>
+</body>
+
+</html>
