@@ -2,6 +2,7 @@
 import express from "express";
 import http from "http";
 import path from "path";
+import config from "./config";
 
 // express 미들웨어 불러오기
 import bodyParser from "body-parser";
@@ -18,7 +19,7 @@ import expressSession from "express-session";
 let app = express();
 
 // 기본 속성 설정
-app.set("port", process.env.PORT || 3000);
+app.set("port", config.server_port || 3000);
 
 //body-parser를 사용해 application/x-www-form-urlencoded 파싱
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -60,7 +61,7 @@ import user from "./routes/user";
 // 데이터베이스 연결
 const connectDB = () => {
   // 데이터베이스 연결 정보
-  const databaseUrl = "mongodb://localhost:27017/local";
+  const databaseUrl = config.db_url;
   // 데이터베이스 연결
   console.log("데이터베이스 연결을 시도합니다.");
   mongoose.Promise = global.Promise;
